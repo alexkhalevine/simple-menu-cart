@@ -1,0 +1,65 @@
+.newDishWrapper {
+  padding: 10px;
+  background-color: rgba(121, 150, 189, 0.4);
+  border-bottom: 1px solid rgba(121, 150, 189, 0.2);
+
+  h3 {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+
+.newDish {
+  display: flex;
+  align-items: center;
+
+  fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+
+    label{
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .price {
+    max-width: 70px;
+  }
+
+  .allergens {
+    max-width: 80px;
+  }
+
+  #tag, #category {
+    border: 1px solid rgba(116, 79, 168, 0.75);
+    padding: 10px;
+    min-width: 90px;
+  }
+
+  #category {
+    min-width: 160px;
+  }
+
+  @media only screen and (max-width: 600px) {
+      display: block;
+      padding: 10px;
+      background-color: rgba(121, 150, 189, 0.2);
+      border-bottom: 1px solid rgba(121, 150, 189, 0.2);
+
+
+    .input {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      display: block;
+      margin-left: 0;
+    }
+  }
+}
+
+
+
