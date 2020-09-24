@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useStateValue } from '../../contextState';
 import Fieldset from '../Fieldset';
-import {dishTags, dishCategories} from '../../constants';
+import { dishTags, dishCategories } from '../../constants';
 import './index.scss';
 
 const NewDishComponent = ({

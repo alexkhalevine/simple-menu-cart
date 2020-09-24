@@ -8,7 +8,6 @@ const DaysComponent = () => {
 
   return (
     <div className="days">
-
       {
         Object.keys(days).map((dayName, index) => {
           const { open, dishes } = days[dayName]

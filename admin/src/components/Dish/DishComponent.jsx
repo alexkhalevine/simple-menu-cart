@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {dishTags, dishCategories} from '../../constants';
+import { dishTags, dishCategories } from '../../constants';
 import Fieldset from '../Fieldset';
 import { useStateValue } from '../../contextState';
 import './index.scss';
@@ -35,7 +35,7 @@ const DishComponent = ({
   const onTagChange = (e, data) => {
     dispatch({
       type: 'editDish',
-      dishContent: {...fieldValues, tag: data.value},
+      dishContent: { ...fieldValues, tag: data.value },
       dayName,
       index,
     });
@@ -44,7 +44,7 @@ const DishComponent = ({
   const onCategoryChange = (e, data) => {
     dispatch({
       type: 'editDish',
-      dishContent: {...fieldValues, category: data.value},
+      dishContent: { ...fieldValues, category: data.value },
       dayName,
       index,
     });

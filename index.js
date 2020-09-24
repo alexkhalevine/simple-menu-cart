@@ -21,24 +21,21 @@ const WriteTextToFileAsync = async (contentToWrite) => {
     }
 }
 
-// Default route
 app.get('/', (req, res) => res.status(200).send({ message : 'server alive' }));
 app.use('/admin', express.static('admin/build'));
 app.use('/preview', express.static('frontend/'));
 
-// Write route
 app.use('/write', async (req, res) => {
-  console.log('--------------- ', req.body);
     if (req.body) {
         try {
             const fileContent = JSON.stringify(req.body);
             await WriteTextToFileAsync(fileContent);
             return res.status(200).send( { message: 'File written successfully!' });
         } catch (err) {
-            throw new Error(`..........Could not write file because of ${err}`);
+            throw new Error(`Could not write file because of ${err}`);
         }
     } else {
-        throw new Error(`..........Could not write file because of body contains no data`);
+        throw new Error('Could not write file because of body contains no data');
     }
 });
 

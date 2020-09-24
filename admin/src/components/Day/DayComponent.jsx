@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {dishCategories} from '../../constants';
+import { dishCategories } from '../../constants';
 import { useStateValue } from '../../contextState';
 import Dish from '../Dish';
 import NewDish from '../NewDish';
@@ -33,19 +33,19 @@ const DayComponent = ({
   };
 
   const getDishByCategory = (category) => {
-      return dishes.map((dish, index) => {
-        const { dishName } = dish;
-        if (dish.category == category) {
-          return (
-            <Dish
-              key={`${dishName}_${index}`}
-              index={index}
-              data={dish}
-              dayName={name}
-            />
-          )
-        }
-      })
+    return dishes.map((dish, index) => {
+      const { dishName } = dish;
+      if (dish.category == category) {
+        return (
+          <Dish
+            key={`${dishName}_${index}`}
+            index={index}
+            data={dish}
+            dayName={name}
+          />
+        )
+      }
+    })
   }
 
   return (
@@ -53,26 +53,24 @@ const DayComponent = ({
       <header>
         <h2>{name} <small>{isOpen ? "(open)" : "(closed)"}</small></h2>
         <label className="switch">
-          <input type="checkbox" defaultChecked={isOpen} onChange={() => onBlur()}/>
+          <input type="checkbox" defaultChecked={isOpen} onChange={() => onBlur()} />
           <span className="slider round"></span>
         </label>
       </header>
-          {dishCategories.map((category, index) => {
-            const dishList= getDishByCategory(index+1);
-
-            if (dishList.length > 0) {
-              return (
-                <>
-                  <h3>{category.text}</h3>
-                  {dishList}
-                </>
-              );
-            }
-          })}
-
-          <NewDish
-            dayName={name}
-          />
+      {dishCategories.map((category, index) => {
+        const dishList = getDishByCategory(index + 1);
+        if (dishList.length > 0) {
+          return (
+            <>
+              <h3>{category.text}</h3>
+              {dishList}
+            </>
+          );
+        }
+      })}
+      <NewDish
+        dayName={name}
+      />
       <button className="btn" onClick={save}>save</button>
     </section>
   )

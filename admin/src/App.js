@@ -14,7 +14,7 @@ const App = props => {
       const result = await axios('data.json');
       setData(result.data);
     } catch (err) {
-      console.log(`... could not load data, failed with ${err}`);
+      console.log(`could not load data, failed with ${err}`);
     }
   }
 
@@ -30,14 +30,14 @@ const App = props => {
           <div className="admin-container">
             <header className="admin-header">
               <h1>Menu Editor</h1>
-              <a href="http://dev.suche-transport.at/preview" target="blank" className={"btn-preview"}>preview</a>
+              <a href="http://localhost:7000/preview" target="blank" className={"btn-preview"}>preview</a>
             </header>
             <Days />
           </div>
         </StateProvider>
       ) :
         <div className="preloader">
-          <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          <div className="lds-roller"></div>
         </div>
       }
     </>
